@@ -80,7 +80,9 @@ repositories {
 dependencies {
   api appProject
   implementation platform("com.google.firebase:firebase-bom:${ReactNative.ext.getVersion("firebase", "bom")}")
-  implementation "com.google.firebase:firebase-auth"
+  implementation('com.google.firebase:firebase-auth') {
+        exclude module: "play-services-safetynet"
+    }
 }
 
 ReactNative.shared.applyPackageVersion()
